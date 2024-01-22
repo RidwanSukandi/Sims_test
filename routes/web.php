@@ -16,22 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/profile', function () {
-    $user = Auth::user();
-    return view('profile', ['user' => $user]);
-});
-
-// Route::GET('/dashboard', [ProductController::class, 'index']);
-// Route::GET('/tambah-produk', [ProductController::class, 'create']);
-// Route::GET('/edit-produk/{id}', [ProductController::class, 'edit']);
-// Route::POST('/tambah-produk', [ProductController::class, 'store']);
-// Route::PUT('/edit-produk/{id}', [ProductController::class, 'update']);
-// Route::DELETE('/dashboard/{id}', [ProductController::class, 'destroy']);
-// Route::POST('/', [UserController::class, 'login']);
-
-// Route::group(['middleware' => 'web'], function () {
-
-// });
 
 Route::get('/login', [UserController::class, 'form'])->name('login')->middleware('guest');
 Route::post('/login', [UserController::class, 'login']);
@@ -44,5 +28,9 @@ Route::middleware(['auth'])->group(function () {
     Route::PUT('/edit-produk/{id}', [ProductController::class, 'update']);
     Route::DELETE('/produk/{id}', [ProductController::class, 'destroy']);
     Route::GET('/export', [ProductController::class, 'export']);
+    Route::get('/profile', function () {
+        $user = Auth::user();
+        return view('profile', ['user' => $user]);
+    });
     Route::post('/logout', [UserController::class, 'logout']);
 });

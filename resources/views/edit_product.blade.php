@@ -83,7 +83,7 @@
 </div>
 
 <div class="flex justify-end space-x-4">
-    <div> <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Cancel</button></div>
+    <div> <a href="/produk" type="submit" class="text-blue-600 border border-blue-700  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Batalkan</a></div>
     <div> <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button></div>
 </div>
 
@@ -96,13 +96,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 <script>
- $(document).ready(function() {
-      $('#hargaBeli').on('input', function() {
-        var inputValue = $(this).val();
-        var sum = (inputValue*30 / 100).toFixed(2);
-      $('#hargaJual').val(sum);
-      });
+$(document).ready(function() {
+    $('#hargaBeli').on('input', function() {
+
+        var inputValue = parseFloat($(this).val());
+
+        //  nilai yang dimasukkan adalah angka positif
+        if (isNaN(inputValue) || inputValue < 0) {
+            alert('Masukkan nilai harga beli yang valid.');
+            // Mengosongkan input jika nilai tidak valid
+            $('#hargaBeli').val('');
+            return;
+        }
+
+        // Menghitung keuntungan
+        var keuntungan = inputValue * 0.3;
+
+        // Menghitung harga jual
+        var hargaJual = inputValue + keuntungan;
+
+        // Menetapkan nilai harga jual ke input harga jual
+        $('#hargaJual').val(hargaJual);
     });
-</script>
+});
 
 

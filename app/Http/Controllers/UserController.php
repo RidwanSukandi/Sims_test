@@ -13,29 +13,6 @@ use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
 
-    public function index()
-    {
-        return view('register');
-    }
-
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'name' => 'unique:users',
-            'posisi' => 'min:2',
-            'image' => 'min:2',
-            'password' => 'min:2'
-        ]);
-
-        $validatedData['password'] = Hash::make($validatedData['password']);
-
-
-        User::create($validatedData);
-
-
-        return redirect('/login')->with('success', 'Registration successfull! Please login');
-    }
-
     function form()
     {
 
