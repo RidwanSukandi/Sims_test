@@ -9,11 +9,11 @@ git clone https://github.com/RidwanSukandi/Sims_test
 
 ```
 
--   <b> php artisan migrate <b> untuk menjalankan migrasi database
+-   <b> php artisan migrate </b> untuk menjalankan migrasi database
 
--   <b> npm run dev <b> untuk menjalankan server taildwind css
+-   <b> npm run dev </b> untuk menjalankan server taildwind css
 
--   <b> php artisan serve <b> untuk menjalankan server laravel
+-   <b> php artisan serve </b> untuk menjalankan server laravel
 
 ## Fitur Aplikasi
 
@@ -105,44 +105,3 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-
-# Aplikasi Berbasis Web CRUD
-
-## Instalasi ke Server Lokal :
-
--   Clone project dengan cara menuliskan pada terminal/cmd/git bash :<br> <b>git clone</b>
-
-```
-git clone https://github.com/RidwanSukandi/Sims_test
-
-```
-
--   <b> php artisan migrate <b> untuk menjalankan migrasi database
-
--   <b> npm run dev <b> untuk menjalankan server taildwind css
-
--   <b> php artisan serve <b> untuk menjalankan server laravel
-
-## Fitur Aplikasi
-
--   Halaman Utama (Halaman Produt)<br><br>
-
--   Tambah Data <br>
--   Ubah Data <br>
--   Hapus Data <br>
--   Filter Data <br>
--   Searching Data <br>
--   Export Xl Sesuai Filter <br>
-
--   Halaman Profil <br><br>
-
--   Menampilkan Nama <br>
--   Menampilkan Kandidat <br>
--   Menampilkan Posisi <br>
-
--   Logout <br><br>
-
--   Login <br><br>
-
--   name : Ridwan <br>
--   pasworrd : ridwan <br>
